@@ -37,7 +37,7 @@ void SysClockConfig (void)
 	
 	
 	#define PLL_M 	4
-	#define PLL_N 	168
+	#define PLL_N 	160
 	#define PLL_P 	0  // PLLP = 2
 
 	// 1. ENABLE HSE and wait for the HSE to become Ready
