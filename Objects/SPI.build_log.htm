@@ -17,40 +17,149 @@ Library Manager: ArmAr.exe V6.16
 Hex Converter:   FromElf.exe V6.16
 CPU DLL:         SARMCM3.DLL V5.34.0.0
 Dialog DLL:      DCM.DLL V1.17.3.0
-Target DLL:      UL2CM3.DLL V1.163.9.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.8.0
 Dialog DLL:      TCM.DLL V1.48.0.0
  
 <h2>Project:</h2>
 D:\Projekty\Keil\F4_SPI_FullDuplex\SPI.uvprojx
-Project File Date:  04/27/2021
+Project File Date:  05/17/2021
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.16', folder: 'D:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
-compiling system_stm32f4xx.c...
-compiling RccConfig.c...
 main.c(2): warning: In file included from...
 ./Delay.h(8): warning: no newline at end of file [-Wnewline-eof]
 void Delay_ms (uint16_t ms);
                             ^
-main.c(14): warning: no newline at end of file [-Wnewline-eof]
-}
- ^
-2 warnings generated.
-compiling main.c...
-Delay.c(3): warning: In file included from...
-./Delay.h(8): warning: no newline at end of file [-Wnewline-eof]
-void Delay_ms (uint16_t ms);
+main.c(3): warning: In file included from...
+./SPI.h(22): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+main.c(10): warning: unused parameter 'address' [-Wunused-parameter]
+void lis35de_write (uint8_t address, uint8_t value)
                             ^
-Delay.c(42): warning: no newline at end of file [-Wnewline-eof]
+main.c(10): warning: unused parameter 'value' [-Wunused-parameter]
+void lis35de_write (uint8_t address, uint8_t value)
+                                             ^
+main.c(10): warning: no previous prototype for function 'lis35de_write' [-Wmissing-prototypes]
+void lis35de_write (uint8_t address, uint8_t value)
+     ^
+main.c(10): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void lis35de_write (uint8_t address, uint8_t value)
+^
+static 
+main.c(15): warning: unused parameter 'address' [-Wunused-parameter]
+void lis35de_read (uint8_t address)
+                           ^
+main.c(15): warning: no previous prototype for function 'lis35de_read' [-Wmissing-prototypes]
+void lis35de_read (uint8_t address)
+     ^
+main.c(15): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void lis35de_read (uint8_t address)
+^
+static 
+main.c(20): warning: no previous prototype for function 'lis35de_init' [-Wmissing-prototypes]
+void lis35de_init (void)
+     ^
+main.c(20): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void lis35de_init (void)
+^
+static 
+main.c(38): warning: no newline at end of file [-Wnewline-eof]
 }
  ^
-2 warnings generated.
-compiling Delay.c...
-assembling startup_stm32f407xx.s...
+main.c(6): warning: no previous extern declaration for non-static variable 'xg' [-Wmissing-variable-declarations]
+float xg, yg, zg;
+      ^
+main.c(6): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float xg, yg, zg;
+^
+main.c(6): warning: no previous extern declaration for non-static variable 'yg' [-Wmissing-variable-declarations]
+float xg, yg, zg;
+          ^
+main.c(6): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float xg, yg, zg;
+^
+main.c(6): warning: no previous extern declaration for non-static variable 'zg' [-Wmissing-variable-declarations]
+float xg, yg, zg;
+              ^
+main.c(6): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+float xg, yg, zg;
+^
+main.c(7): warning: no previous extern declaration for non-static variable 'x' [-Wmissing-variable-declarations]
+int16_t x,y,z;
+        ^
+main.c(7): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int16_t x,y,z;
+^
+main.c(7): warning: no previous extern declaration for non-static variable 'y' [-Wmissing-variable-declarations]
+int16_t x,y,z;
+          ^
+main.c(7): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int16_t x,y,z;
+^
+main.c(7): warning: no previous extern declaration for non-static variable 'z' [-Wmissing-variable-declarations]
+int16_t x,y,z;
+            ^
+main.c(7): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+int16_t x,y,z;
+^
+main.c(8): warning: no previous extern declaration for non-static variable 'RxData' [-Wmissing-variable-declarations]
+uint8_t RxData[6];
+        ^
+main.c(8): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint8_t RxData[6];
+^
+16 warnings generated.
+compiling main.c...
+SPI.c(1): warning: In file included from...
+./SPI.h(22): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+SPI.c(18): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        SPI1->CR1 &= ~(3<<3);   // BR[2:0] = 000: fPCLK/2 -> PCLK2 = 80 MHz, SPI clk = 5MHz
+                  ~~ ^~~~~~~
+SPI.c(20): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        SPI1->CR1 &= ~(1<<7);   // LSBFIRST = 0, MSB first
+                  ~~ ^~~~~~~
+SPI.c(24): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        SPI1->CR1 &= ~(1<<10);  // RXONLY = 0, full-duplex
+                  ~~ ^~~~~~~~
+SPI.c(26): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        SPI1->CR1 &= ~(1<<11);  // DFF = 0, 8 bit data
+                  ~~ ^~~~~~~~
+SPI.c(49): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        SPI1->CR1 &= ~(1<<6);           // SPE=0, Peripheral Disabled
+                  ~~ ^~~~~~~
+SPI.c(74): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                while (!((SPI1->SR)&(1<<1))) {;}                // wait for TXE bit to set -> This will indicate that the buffer is empty
+                                              ^
+SPI.c(83): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+        while (!((SPI1->SR)&(1<<1))) {;}                // wait for TXE bit to set -> This will indicate that the buffer is empty
+                                      ^
+SPI.c(84): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+        while (((SPI1->SR)&(1<<7))) {;}                 // wait for BSY bit to Reset -> This will indicate that SPI is not busy in communication
+                                     ^
+SPI.c(87): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        uint8_t temp = SPI1->DR;
+                ~~~~   ~~~~~~^~
+SPI.c(88): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                                        temp = SPI1->SR;
+                                             ~ ~~~~~~^~
+SPI.c(102): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                while (((SPI1->SR)&(1<<7))) {;}  // wait for BSY bit to Reset -> This will indicate that SPI is not busy in communication
+                                             ^
+SPI.c(104): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                while (!((SPI1->SR) &(1<<0))){;}  // Wait for RXNE to set -> This will indicate that the Rx buffer is not empty
+                                              ^
+SPI.c(105): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+          *data++ = (SPI1->DR);
+                  ~  ~~~~~~^~
+14 warnings generated.
+compiling SPI.c...
 linking...
-Program Size: Code=376 RO-data=408 RW-data=0 ZI-data=1632  
-".\Objects\SPI.axf" - 0 Error(s), 4 Warning(s).
+Program Size: Code=696 RO-data=408 RW-data=0 ZI-data=1632  
+".\Objects\SPI.axf" - 0 Error(s), 30 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -76,9 +185,9 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.4.0
 
    * Component: Keil::Device:Startup:2.6.3
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
       Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
-      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f407xx.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
 Build Time Elapsed:  00:00:01
